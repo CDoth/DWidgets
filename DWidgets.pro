@@ -27,8 +27,7 @@ SOURCES += \
     DSpinBox.cpp \
     DSwitchButton.cpp \
     DSwitcher.cpp \
-    DWidget.cpp \
-    DWidgets.cpp
+    DWidget.cpp
 
 HEADERS += \
     DAxis.h \

@@ -1,11 +1,7 @@
 debug/DAxis.o
 debug/DButtonsBoard.o
 debug/DDial.o
-debug/DDiscretePlot.o
-debug/DDiscretePlot2.o
 debug/DDoubleSpinBox.o
-debug/DListWidget.o
-debug/DLivePlot.o
 debug/DPlot.o
 debug/DScrollBar.o
 debug/DSection.o
@@ -16,11 +12,7 @@ debug/DWidget.o
 debug/DWidgets.o
 debug/moc_DButtonsBoard.o
 debug/moc_DDial.o
-debug/moc_DDiscretePlot.o
-debug/moc_DDiscretePlot2.o
 debug/moc_DDoubleSpinBox.o
-debug/moc_DListWidget.o
-debug/moc_DLivePlot.o
 debug/moc_DPlot.o
 debug/moc_DScrollBar.o
 debug/moc_DSection.o
