@@ -172,3 +172,11 @@ Get clicked button by Qt signal:
 signals:
     void clicked(int index);
 ```
+
+Examples:
+
+![Image](screen.jpg)
+
+![Image](photo.jpg)
+
+
