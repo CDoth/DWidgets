@@ -26,7 +26,7 @@ DDial has 4 different modes
 
 Example of `Discrete` and `Infinite` dials:
 
-![This is an image](_37hGkAKzwc.jpg)
+![Dials](_37hGkAKzwc.jpg)
 
 Interface:
 ```
@@ -57,18 +57,118 @@ Interface:
  ```
  
 ## DPlot
+This plot widget provide:
+- Point groups: create many point groups with different names, colors, visible ans scale settings. Manage point group settings in real time (scale group or hide)
+- Axes with any poisition, direction and size. Set autoscale for axes or set fixed size
+- In base mode you just add points (x;y) to point group and DPlot draw it with specific settings
+- In live mode you can add points in real time and plot will look alive - plot always will shift to left like on digital cardiograph.
+- Also you can set any math function to point group and DPlot will draw this function. It also available in live mode.
 
-![This is an image](plot3.jpg)
-![This is an image](plot7.jpg)
-![This is an image](plot_r1.jpg)
-![This is an image](plot_m1.jpg)
 
-## DSpinBox
-## DDoubleSpinBox
+![Plot compilation](plot_c.jpg)
+
 ## DSection
+Section with one digit [0;9]. Change value from mouse wheel, cursor, keyboard or inner function or Qt signal
+```
+signals:
+    void dblClicked();
+    void clicked();
+    void valueChanged(int);
+```
+Set custom view of sections (any image):
+```
+    void x_setCustomImages(const QVector<QPixmap> &images);
+    void x_setCustomImage(const QPixmap &pm, int index);
+```
+Interface:
+```
+  void x_setFont(const QFont &f);
+    void x_setFontSize(int size);
+    void x_setColor(const QColor &c);
+    void x_setBackgroundColor(const QColor &c);
+
+    void x_valueUp();
+    void x_valueDown();
+    void x_valueChange(int direction);
+    void x_valueChange(DAbstractSection *s);
+```
+
+
+## DSpinBox & DDoubleSpinBox
+Rotate spin section by mouse wheel, cursor or keyboard
+
+![Spin box](spin.png)
+![Double spin box](dspin.png)
+
+Set custom view of sections (any image):
+```
+    void x_loadCustomNumbers(const QVector<QPixmap> &cn);
+    void x_loadCustomNumber(const QPixmap &pm, int index);
+```
+Get value:
+```
+int DSpinBox::x_value();
+double DDoubleSpinBox::x_value();
+```
+Get new value by Qt signal:
+```
+// DSpinBox:
+signals:
+    void valueChanged(int);
+    
+// DDoubleSpinBox:
+signals:
+    void leftValueChanged(int);
+    void rightValueChanged(double);
+    void valueChanged(double);
+```
+For negative values:
+```
+void x_addSignSection();
+```
+Interface:
+```
+//DSpinBox:
+    void x_setValue(int v);
+    void x_valueUp();
+    void x_valueDown();
+    void x_setMaxValue();
+    void x_setMinValue();
+    bool x_isMinValue();
+    bool x_isMaxValue();
+    int x_getMaxValue();
+```
+Add rate box:
+```
+    void x_addMultiplyRateBox(int left, int right);
+    void x_addDivisionRateBox(int left, int right);
+```
+Spin box value will multiply or divide or value from rate box
+
 ## DSwitcher
+![Switcher](switch.png)
+Interface:
+```
+   void x_setValue(int v);
+    void x_setFirst();
+    void x_setLast();
+    int x_getValue();
+    int x_size();
+
+    void x_setName(const QString &name, int i);
+    QString x_name(int i);
+    void x_addPosition(const QString &name);
+    void x_removePosition(int i);
+    void x_removePosition(const QString &name);
+
+    void x_setRadius(int r);
+```
 ## Other
-#### DWidget
 #### DButtonsBoard
-#### DScrollBar
-#### DSWitchButton
+Panel with buttons
+
+Get clicked button by Qt signal:
+```
+signals:
+    void clicked(int index);
+```
