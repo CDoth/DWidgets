@@ -61,6 +61,7 @@ Interface:
 ![This is an image](plot3.jpg)
 ![This is an image](plot7.jpg)
 ![This is an image](plot_r1.jpg)
+![This is an image](plot_m1.jpg)
 
 ## DSpinBox
 ## DDoubleSpinBox
